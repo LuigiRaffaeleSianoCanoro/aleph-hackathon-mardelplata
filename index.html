@@ -1000,6 +1000,184 @@
   .hero > *:nth-child(2) { animation-delay: 0.15s; }
   .hero > *:nth-child(3) { animation-delay: 0.25s; }
   .hero > *:nth-child(4) { animation-delay: 0.35s; }
+
+  /* ── TRACKS ACCORDION ── */
+  .track-card {
+    border: 1px solid var(--border);
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .track-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    cursor: pointer;
+    background: rgba(247,245,240,0.02);
+    transition: background 0.15s;
+    gap: 12px;
+    user-select: none;
+  }
+  .track-header:hover { background: rgba(232,68,28,0.06); }
+  .track-header.open { background: rgba(232,68,28,0.08); border-bottom: 1px solid var(--border); }
+  .track-header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    min-width: 0;
+  }
+  .track-icon { font-size: 22px; flex-shrink: 0; }
+  .track-name {
+    font-family: var(--font-c);
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1;
+  }
+  .track-prize-tag {
+    font-family: var(--font-m);
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--orange);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .track-category {
+    font-family: var(--font-m);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(247,245,240,0.35);
+    margin-top: 2px;
+  }
+  .track-chevron {
+    font-size: 14px;
+    color: rgba(247,245,240,0.4);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  .track-header.open .track-chevron { transform: rotate(180deg); color: var(--orange); }
+  .track-body {
+    display: none;
+    padding: 24px 20px;
+  }
+  .track-body.open { display: block; }
+  .track-section {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .track-section:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .track-section-title {
+    font-family: var(--font-m);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 14px;
+  }
+  .track-desc {
+    font-size: 12px;
+    color: rgba(247,245,240,0.6);
+    line-height: 1.7;
+  }
+  .prize-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .prize-item {
+    border: 1px solid var(--border);
+    background: rgba(232,68,28,0.05);
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 120px;
+  }
+  .prize-medal { font-size: 18px; flex-shrink: 0; }
+  .prize-amount {
+    font-family: var(--font-c);
+    font-size: 18px;
+    color: var(--white);
+    letter-spacing: 0.03em;
+    line-height: 1;
+  }
+  .prize-label {
+    font-size: 9px;
+    color: rgba(247,245,240,0.4);
+    margin-top: 2px;
+    line-height: 1.3;
+  }
+  .track-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .track-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 12px;
+    color: rgba(247,245,240,0.65);
+    line-height: 1.6;
+  }
+  .track-list li::before {
+    content: '→';
+    color: var(--orange);
+    flex-shrink: 0;
+    font-size: 11px;
+    margin-top: 3px;
+  }
+  .track-list a { color: var(--orange); text-decoration: none; font-weight: 700; }
+  .track-list a:hover { text-decoration: underline; }
+  .track-resources {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .track-resource-link {
+    font-family: var(--font-m);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: rgba(247,245,240,0.55);
+    text-decoration: none;
+    padding: 4px 10px;
+    border: 1px solid rgba(247,245,240,0.12);
+    transition: all 0.15s;
+  }
+  .track-resource-link:hover { color: var(--orange); border-color: var(--orange); }
+  .track-person {
+    font-size: 11px;
+    color: rgba(247,245,240,0.65);
+    line-height: 1.6;
+  }
+  .track-person strong { color: var(--white); }
+  .track-perks {
+    font-size: 11px;
+    color: rgba(247,245,240,0.45);
+    line-height: 1.6;
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-left: 2px solid rgba(232,68,28,0.4);
+    background: rgba(232,68,28,0.04);
+  }
+  @media (max-width: 520px) {
+    .track-header { padding: 12px 14px; }
+    .track-name { font-size: 18px; }
+    .track-prize-tag { font-size: 9px; }
+    .track-body { padding: 16px 14px; }
+    .prize-item { min-width: 100px; }
+    .prize-amount { font-size: 15px; }
+  }
 </style>
 </head>
 <body>
@@ -1016,6 +1194,7 @@
     <a href="#herramientas" class="nav-step">HERRAMIENTAS</a>
     <a href="#cronograma" class="nav-step">CRONOGRAMA</a>
     <a href="#premios" class="nav-step">PREMIOS</a>
+    <a href="#tracks" class="nav-step">TRACKS</a>
     <a href="#que-llevar" class="nav-step">QUÉ LLEVAR</a>
     <a href="#reglas" class="nav-step">REGLAS</a>
   </nav>
@@ -1035,6 +1214,7 @@
   <a href="#herramientas" class="nav-step">HERRAMIENTAS</a>
   <a href="#cronograma" class="nav-step">CRONOGRAMA</a>
   <a href="#premios" class="nav-step">PREMIOS</a>
+  <a href="#tracks" class="nav-step">TRACKS</a>
   <a href="#que-llevar" class="nav-step">QUÉ LLEVAR</a>
   <a href="#reglas" class="nav-step">REGLAS</a>
 </nav>
@@ -1644,6 +1824,9 @@
         <div style="display:flex;gap:8px;flex-wrap:wrap;">
           <a href="https://mardelplata.dev.ar" target="_blank" class="btn btn-outline btn-sm">🌐 Sitio web</a>
           <a href="https://chat.whatsapp.com/LZEZd0oV7mD50PuESX4ybs" target="_blank" class="btn btn-sm">💬 Unirme al WhatsApp →</a>
+          <a href="https://www.instagram.com/mardelplata.dev.ar/" target="_blank" class="btn btn-outline btn-sm">📸 Instagram</a>
+          <a href="https://x.com/Mardeldev" target="_blank" class="btn btn-outline btn-sm">𝕏 Twitter</a>
+          <a href="https://vt.tiktok.com/ZS9RDKtM75Puj-KyPzz/" target="_blank" class="btn btn-outline btn-sm">🎵 TikTok</a>
         </div>
       </div>
 
@@ -2219,19 +2402,448 @@
     </div>
 
     <div style="margin-top:32px;">
-      <div style="font-family:var(--font-m);font-size:9px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:rgba(247,245,240,0.35);margin-bottom:14px;">✦ Partners del Chapter de Mar del Plata</div>
-      <div style="border:1px solid var(--border);background:rgba(232,68,28,0.04);padding:20px 24px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
-        <img
-          src="WeCheck%20Logo%20%2B%20Font/Logo_Dark%20Theme/WeCheck%20Logotype%20Horizontal%20-%20DARK.png"
-          alt="WeCheck AI"
-          style="height:40px;width:auto;object-fit:contain;opacity:0.9;"
-        >
-        <div style="flex:1;min-width:200px;">
-          <div style="font-family:var(--font-c);font-size:16px;color:var(--white);letter-spacing:0.06em;margin-bottom:4px;">WECHECK AI</div>
-          <div style="font-size:11px;color:rgba(247,245,240,0.45);line-height:1.6;">
-            Cada persona deja miles de rastros digitales en la web. WeCheck AI los recopila, los conecta y revela las señales de alerta que importan.
+      <div style="font-family:var(--font-m);font-size:9px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:rgba(247,245,240,0.35);margin-bottom:14px;">✦ Sponsors y Partners del Chapter de Mar del Plata</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+
+        <div style="border:1px solid var(--border);background:rgba(232,68,28,0.04);padding:20px 24px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+          <img
+            src="https://cdn.prod.website-files.com/67aca5c7e0a415189908624c/67b35f2d03f9c3d7958b5f74_616f0aed86b7bfe5acd6a19b040946c2_logoText.avif"
+            alt="Wallbit"
+            style="height:32px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:0.85;"
+          >
+          <div style="flex:1;min-width:200px;">
+            <div style="font-family:var(--font-m);font-size:9px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--orange);margin-bottom:4px;">Sponsor</div>
+            <div style="font-size:11px;color:rgba(247,245,240,0.45);line-height:1.6;">
+              App financiera todo-en-uno. Cobrá, ahorrá e invertí en dólares desde una sola plataforma.
+            </div>
           </div>
         </div>
+
+        <div style="border:1px solid var(--border);background:rgba(232,68,28,0.04);padding:20px 24px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+          <img
+            src="WeCheck%20Logo%20%2B%20Font/Logo_Dark%20Theme/WeCheck%20Logotype%20Horizontal%20-%20DARK.png"
+            alt="WeCheck AI"
+            style="height:36px;width:auto;object-fit:contain;opacity:0.9;"
+          >
+          <div style="flex:1;min-width:200px;">
+            <div style="font-family:var(--font-m);font-size:9px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(247,245,240,0.35);margin-bottom:4px;">Partner</div>
+            <div style="font-size:11px;color:rgba(247,245,240,0.45);line-height:1.6;">
+              Cada persona deja miles de rastros digitales en la web. WeCheck AI los recopila, los conecta y revela las señales de alerta que importan.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       TRACKS & PREMIOS
+  ══════════════════════════════════ -->
+  <div class="cronograma-section" id="tracks">
+    <div class="step-line" style="margin-top:0;margin-bottom:40px;"><span>tracks</span></div>
+    <div class="section-eyebrow">✦ Aleph Hackathon Mar del Plata 2026</div>
+    <div class="section-title">TRACKS &amp;<br><span style="color:var(--orange);">PREMIOS</span></div>
+    <p style="font-size:12px;color:rgba(247,245,240,0.5);line-height:1.7;margin-bottom:28px;">
+      Elegí el track (o tracks) en los que vas a competir. Cada uno tiene sus propios premios, jurados y requisitos técnicos.
+      Podés participar en más de uno — cuantos más tracks, más chances de ganar. Hacé clic para expandir cada uno.
+    </p>
+
+    <!-- ── PL_GENESIS ── -->
+    <div class="track-card">
+      <div class="track-header" onclick="toggleTrack(this)">
+        <div class="track-header-left">
+          <span class="track-icon">🌐</span>
+          <div>
+            <div class="track-name">PL_GENESIS</div>
+            <div class="track-category">Mejor Proyecto General · Web3 / AI / Robótica</div>
+          </div>
+        </div>
+        <span class="track-prize-tag">$2,000 USDC</span>
+        <span class="track-chevron">▾</span>
+      </div>
+      <div class="track-body">
+        <div class="track-section">
+          <div class="track-section-title">Descripción</div>
+          <p class="track-desc">Reconoce los proyectos más destacados del hackathon sin importar la categoría. Si estás construyendo en Web3, AI o Robótica, este track premia a los equipos con mejor ejecución e impacto.</p>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Premio</div>
+          <div class="prize-grid">
+            <div class="prize-item">
+              <span class="prize-medal">🥇</span>
+              <div><div class="prize-amount">$1,500 USDC</div><div class="prize-label">1er lugar</div></div>
+            </div>
+            <div class="prize-item">
+              <span class="prize-medal">🥈</span>
+              <div><div class="prize-amount">$500 USDC</div><div class="prize-label">2do lugar</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Requisitos</div>
+          <ul class="track-list">
+            <li>Registrar tu proyecto en este track dentro de DoraHacks</li>
+            <li>Registrarte en el <a href="https://pl-genesis-frontiers-of-collaboration-hackathon.devspot.app/?activeTab=challenges&challenge=471" target="_blank">Crecimiento Track en PL_Genesis Hackathon</a> y enviar tu proyecto ahí también</li>
+            <li>Tu proyecto debe ser sobre crypto, AI o robótica</li>
+          </ul>
+          <div class="track-perks">Opcionalmente, podés seguir trabajando hasta el 31 de marzo y resubmitear tu proyecto — ¡estarías participando en dos hackathons a la vez!</div>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Mentores</div>
+          <p class="track-person">Múltiples mentores disponibles — <a href="https://alephhackathon.notion.site/mentors" target="_blank" style="color:var(--orange);text-decoration:none;font-weight:700;">ver directorio</a></p>
+          <p class="track-person" style="margin-top:6px;color:rgba(247,245,240,0.4);">Mentoría online vía Telegram · Mentores especialmente disponibles el sábado</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── AVALANCHE ── -->
+    <div class="track-card">
+      <div class="track-header" onclick="toggleTrack(this)">
+        <div class="track-header-left">
+          <span class="track-icon">🔺</span>
+          <div>
+            <div class="track-name">AVALANCHE</div>
+            <div class="track-category">Web3 &amp; Blockchain</div>
+          </div>
+        </div>
+        <span class="track-prize-tag">hasta $5,000 USDC</span>
+        <span class="track-chevron">▾</span>
+      </div>
+      <div class="track-body">
+        <div class="track-section">
+          <div class="track-section-title">Premio</div>
+          <div class="prize-grid">
+            <div class="prize-item">
+              <span class="prize-medal">🥇</span>
+              <div><div class="prize-amount">$2,000 USDC</div><div class="prize-label">1er lugar</div></div>
+            </div>
+            <div class="prize-item">
+              <span class="prize-medal">🥈</span>
+              <div><div class="prize-amount">$1,000 USDC</div><div class="prize-label">2do lugar</div></div>
+            </div>
+            <div class="prize-item">
+              <span class="prize-medal">🥉</span>
+              <div><div class="prize-amount">$500 USDC</div><div class="prize-label">3er lugar</div></div>
+            </div>
+            <div class="prize-item">
+              <span class="prize-medal">🏅</span>
+              <div><div class="prize-amount">$1,500 USDC</div><div class="prize-label">Top proyectos — a discreción del jurado</div></div>
+            </div>
+          </div>
+          <div class="track-perks">Perks adicionales: mentoría post-hackathon · fast-track para grants e incubadoras · oportunidades de integración</div>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">¿Qué construir?</div>
+          <ul class="track-list">
+            <li>Settlement de RWA (real-world assets) en Avalanche L1 privada</li>
+            <li>Agentes AI que pagan por API call on-chain (protocolo x402)</li>
+            <li>Tokens privados y ZK proofs para programas de loyalty confidenciales</li>
+            <li>Protocolos DeFi con KYC/whitelist a nivel smart contract</li>
+            <li>Juegos on-chain con agentes autónomos (ERC-8004) en Avalanche L1</li>
+          </ul>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Recursos</div>
+          <div class="track-resources">
+            <a href="https://build.avax.network/" target="_blank" class="track-resource-link">Dev portal — build.avax.network</a>
+            <a href="https://build.avax.network/console" target="_blank" class="track-resource-link">Starter kits — Avalanche Console</a>
+            <a href="https://t.me/avalancheacademy" target="_blank" class="track-resource-link">Soporte Telegram</a>
+            <a href="https://www.youtube.com/@Team1Latam" target="_blank" class="track-resource-link">YouTube tutoriales — Team1 Latam</a>
+          </div>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Mentores</div>
+          <p class="track-person"><strong>Santiago Cammi</strong> — CoFounder Lucero Labs · Full stack web3</p>
+          <p class="track-person"><strong>Katherine Sullivan</strong> — Team1 · Solidity y lenguajes de programación</p>
+          <p class="track-person" style="margin-top:6px;color:rgba(247,245,240,0.4);">Mentoría online vía Telegram · Especialmente disponibles el sábado</p>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Jurado</div>
+          <p class="track-person"><strong>Leandro Davo</strong> — BD, Avalabs</p>
+          <p class="track-person"><strong>Alejandro Soto</strong> — DevRel, Avalabs</p>
+          <p class="track-person"><strong>Sofía Priore</strong> — Regional Lead LatAm, Team1</p>
+          <p class="track-person"><strong>Santiago Cammi</strong> — CoFounder Lucero Labs</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── FISERV ── -->
+    <div class="track-card">
+      <div class="track-header" onclick="toggleTrack(this)">
+        <div class="track-header-left">
+          <span class="track-icon">💳</span>
+          <div>
+            <div class="track-name">FISERV</div>
+            <div class="track-category">Fintech &amp; Pagos · Plataforma Clover</div>
+          </div>
+        </div>
+        <span class="track-prize-tag">$1,000 USD</span>
+        <span class="track-chevron">▾</span>
+      </div>
+      <div class="track-body">
+        <div class="track-section">
+          <div class="track-section-title">Descripción</div>
+          <p class="track-desc">Clover es la plataforma de POS de Fiserv que combina hardware de alto rendimiento con estándares de pago y un App Market abierto donde cualquier builder puede publicar software de valor agregado para comercios.</p>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Premio</div>
+          <div class="prize-grid">
+            <div class="prize-item">
+              <span class="prize-medal">🥇</span>
+              <div><div class="prize-amount">$750 USD</div><div class="prize-label">1er lugar</div></div>
+            </div>
+            <div class="prize-item">
+              <span class="prize-medal">🥈</span>
+              <div><div class="prize-amount">$250 USD</div><div class="prize-label">2do lugar</div></div>
+            </div>
+          </div>
+          <div class="track-perks">Perks adicionales: mentoría post-hackathon orientada a escalar el negocio · pitch ante ejecutivos de Fiserv · posibilidad de publicar en el Clover App Market con acuerdo comercial</div>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">¿Qué construir?</div>
+          <ul class="track-list">
+            <li>Idealmente con AI y/o Blockchain en el core</li>
+            <li>Apps que ayuden a comercios a vender más, retener clientes o ser más eficientes</li>
+            <li>Pagos FIAT usando rails de Fiserv</li>
+            <li>Soluciones para comercios sobre la infraestructura Clover/Fiserv</li>
+          </ul>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Recursos técnicos</div>
+          <div class="track-resources">
+            <a href="https://docs.clover.com/dev/docs/quick-reference-guides-latam-developers" target="_blank" class="track-resource-link">Dev portal — Clover Docs LATAM</a>
+            <a href="https://github.com/clover" target="_blank" class="track-resource-link">GitHub — github.com/clover</a>
+            <a href="https://www.youtube.com/watch?v=X4bNR2wIU9A" target="_blank" class="track-resource-link">Workshop en YouTube</a>
+            <a href="https://docs.clover.com/dev/docs/setting-up-an-android-emulator" target="_blank" class="track-resource-link">Clover Emulador Android</a>
+          </div>
+          <p class="track-desc" style="margin-top:10px;">Clover es Android-based. Se recomienda Kotlin. Se compartirá un template de proyecto junto con la documentación.</p>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Mentor</div>
+          <p class="track-person"><strong>Santiago Maiztegui</strong> — Product Director · POS, Payments, Partnerships</p>
+          <p class="track-person" style="margin-top:6px;color:rgba(247,245,240,0.4);">Mentoría online vía Telegram · Especialmente disponibles el sábado</p>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Jurado</div>
+          <p class="track-person"><strong>Santiago Pérez</strong> — Product Manager, Clover</p>
+          <p class="track-person"><strong>Sebastián Calens</strong> — VP Product, Acquiring</p>
+          <p class="track-person"><strong>Patricio Celia</strong> — Product Director</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── GENLAYER ── -->
+    <div class="track-card">
+      <div class="track-header" onclick="toggleTrack(this)">
+        <div class="track-header-left">
+          <span class="track-icon">🤖</span>
+          <div>
+            <div class="track-name">GENLAYER</div>
+            <div class="track-category">AI + Blockchain Consensus</div>
+          </div>
+        </div>
+        <span class="track-prize-tag">$1,500 + Builder Points</span>
+        <span class="track-chevron">▾</span>
+      </div>
+      <div class="track-body">
+        <div class="track-section">
+          <div class="track-section-title">Descripción</div>
+          <p class="track-desc">Bradbury es el primer testnet donde la IA participa directamente en el consenso de blockchain. Los validadores eligen y optimizan LLMs, y los Intelligent Contracts corren bajo un consenso de AI descentralizado.</p>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Premio</div>
+          <div class="prize-grid">
+            <div class="prize-item" style="flex:unset;">
+              <span class="prize-medal">🏆</span>
+              <div><div class="prize-amount">$1,500</div><div class="prize-label">Distribuido entre hasta 3 proyectos, a criterio del jurado</div></div>
+            </div>
+          </div>
+          <div class="track-perks">Perks adicionales: GenLayer Builder Points para todos los proyectos aceptados — <a href="https://portal.genlayer.foundation/" target="_blank" style="color:var(--orange);text-decoration:none;font-weight:700;">portal.genlayer.foundation</a></div>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Ideas de proyectos</div>
+          <ul class="track-list">
+            <li>Arbitraje descentralizado con evidencia evaluada por AI</li>
+            <li>Future of Work: pagos basados en resultados verificados por AI</li>
+            <li>Juegos multiplayer explorando coordinación y dinámica social</li>
+            <li>Mercados de predicción y betting P2P on-chain</li>
+            <li>AI Governance: decisiones y coordinación entre humanos y agentes</li>
+            <li>Infraestructura para economía entre agentes AI (Agentic Economy)</li>
+          </ul>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Requisitos técnicos</div>
+          <ul class="track-list">
+            <li>También registrar el proyecto en el <a href="https://portal.genlayer.foundation/#/hackathon" target="_blank">hackathon oficial de GenLayer</a> (corre del 20 de marzo al 3 de abril)</li>
+            <li>Deploy en Testnet Bradbury</li>
+            <li>Tu proyecto debe incluir un Intelligent Contract con Optimistic Democracy consensus y Equivalence Principle</li>
+          </ul>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Recursos</div>
+          <div class="track-resources">
+            <a href="https://github.com/genlayerlabs/genlayer-project-boilerplate" target="_blank" class="track-resource-link">Boilerplate — GitHub</a>
+            <a href="https://github.com/genlayer-foundation/genlayer-studio-bridge-boilerplate" target="_blank" class="track-resource-link">Bridge (Layer Zero) — GitHub</a>
+            <a href="https://github.com/courtofinternet/pm-kit" target="_blank" class="track-resource-link">Prediction Market — GitHub</a>
+            <a href="https://discord.com/invite/genlayer" target="_blank" class="track-resource-link">Soporte Discord</a>
+          </div>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Mentor</div>
+          <p class="track-person"><strong>Iván Raskovsky</strong> — Co-Fundador, GenLayer Foundation</p>
+          <p class="track-person" style="margin-top:6px;color:rgba(247,245,240,0.4);">Más mentores y ayuda en el Discord de GenLayer · Especialmente disponibles el sábado</p>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Jurado</div>
+          <p class="track-person"><strong>Iván Raskovsky</strong> — Co-Fundador, GenLayer Foundation</p>
+          <p class="track-person"><strong>Albert Castellana</strong> — CEO, GenLayer Labs</p>
+          <p class="track-person"><strong>David Riudor</strong> — CEO, GenLayer Foundation</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── BIOTECH ── -->
+    <div class="track-card">
+      <div class="track-header" onclick="toggleTrack(this)">
+        <div class="track-header-left">
+          <span class="track-icon">🧬</span>
+          <div>
+            <div class="track-name">BIOTECH</div>
+            <div class="track-category">Bioinformática &amp; Biotecnología</div>
+          </div>
+        </div>
+        <span class="track-prize-tag">$500 USD</span>
+        <span class="track-chevron">▾</span>
+      </div>
+      <div class="track-body">
+        <div class="track-section">
+          <div class="track-section-title">Descripción</div>
+          <p class="track-desc">Co-organizado junto a LucAI y Y-hat. El enfoque es 100% accesible: equipos diseñan y prototipen soluciones aplicadas a problemas reales de biotecnología sin necesidad de infraestructura de laboratorio físico.</p>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Premio</div>
+          <div class="prize-grid">
+            <div class="prize-item" style="flex:unset;">
+              <span class="prize-medal">🥇</span>
+              <div><div class="prize-amount">$500 USD</div><div class="prize-label">1er lugar</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Challenges</div>
+          <div class="notice" style="margin-bottom:10px;">
+            <span class="notice-icon">🔥</span>
+            <div class="notice-text"><strong>Challenge 1 — Bioinformática para la agricultura del futuro</strong><br>Elegí un problema crítico del ecosistema agrícola y proponé una solución técnica viable usando bioinformática. Puede ser diseño de péptidos antimicrobianos, consorcios de biorremediación, optimización de cultivos, etc.</div>
+          </div>
+          <div class="notice">
+            <span class="notice-icon">🔥</span>
+            <div class="notice-text"><strong>Challenge 2 — Open challenge</strong><br>Trabajá sobre cualquier problema relacionado con biotecnología. Tu solución debe incluir un componente técnico (bioinformática, datos, IA o biología computacional) y demostrar una aplicación concreta o impacto potencial.</div>
+          </div>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Entregables</div>
+          <ul class="track-list">
+            <li><strong>Pitch (3 minutos)</strong> — problema, solución técnica y modelo de negocio/transferencia</li>
+            <li><strong>Live Demo</strong> — demostración funcional de la herramienta o pipeline bioinformático</li>
+          </ul>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Ejes de evaluación</div>
+          <ul class="track-list">
+            <li>Aplicabilidad y transferencia tecnológica hacia un bionegocio de alto impacto</li>
+            <li>Profundidad técnica (complejidad del código o pipeline, validación de resultados)</li>
+            <li>La elección de la problemática (relevancia e impacto)</li>
+          </ul>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Mentores</div>
+          <p class="track-person"><strong>Aaron Sznaider</strong> — Computational Biologist en LucAI</p>
+          <p class="track-person"><strong>Teo Gutter</strong> — Co-Director en Y-Hat</p>
+          <p class="track-person"><strong>Tomas Marsal</strong> — Asesor, Dirección de Ciencia y Tecnología de CABA</p>
+          <p class="track-person" style="margin-top:6px;color:rgba(247,245,240,0.4);">Mentoría online vía Telegram · Especialmente disponibles el sábado</p>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Jurado</div>
+          <p class="track-person"><strong>Aaron Sznaider</strong> — Computational Biologist en LucAI</p>
+          <p class="track-person"><strong>Gianlucca Colangelo</strong> — AI Researcher y PhD candidate en Biología Computacional, UBA · LucAI</p>
+          <p class="track-person"><strong>Juan Cruz Pliauzer</strong> — Facilitador de Operaciones en Y-Hat</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── ROBOTICS ── -->
+    <div class="track-card">
+      <div class="track-header" onclick="toggleTrack(this)">
+        <div class="track-header-left">
+          <span class="track-icon">🦾</span>
+          <div>
+            <div class="track-name">ROBOTICS</div>
+            <div class="track-category">Robótica con simuladores · Sin hardware</div>
+          </div>
+        </div>
+        <span class="track-prize-tag">$500 USD</span>
+        <span class="track-chevron">▾</span>
+      </div>
+      <div class="track-body">
+        <div class="track-section">
+          <div class="track-section-title">Descripción</div>
+          <p class="track-desc">Equipos diseñan y prototipen soluciones robóticas sin necesidad de hardware físico, usando herramientas de simulación online. Participación presencial y remota posible.</p>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Premio</div>
+          <div class="prize-grid">
+            <div class="prize-item" style="flex:unset;">
+              <span class="prize-medal">🥇</span>
+              <div><div class="prize-amount">$500 USD</div><div class="prize-label">1er lugar</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Challenges</div>
+          <div class="notice" style="margin-bottom:10px;">
+            <span class="notice-icon">🔥</span>
+            <div class="notice-text"><strong>Challenge 1 — Seguridad Bancaria</strong><br>Diseñar un sistema inteligente de monitoreo para depósitos bancarios capaz de detectar condiciones anómalas, evaluar el nivel de riesgo y activar respuestas automáticas. Mínimo: 2 sensores distintos, 1 actuador, lógica con al menos 2 niveles de respuesta y 1 salida visible del estado.</div>
+          </div>
+          <div class="notice" style="margin-bottom:10px;">
+            <span class="notice-icon">🔥</span>
+            <div class="notice-text"><strong>Challenge 2 — Robot Explorador</strong><br>Diseñar el sistema de control de un rover autónomo que explore un entorno desconocido y recolecte muestras. Obligatorio: navegar sin colisionar, detectar puntos de interés, moverse hacia ellos y completar al menos una recolección.</div>
+          </div>
+          <div class="notice">
+            <span class="notice-icon">🔥</span>
+            <div class="notice-text"><strong>Open challenge</strong><br>Cualquier sistema robótico que resuelva un problema real, con lógica de control (percibir → decidir → actuar), sensores y/o inputs.</div>
+          </div>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Entregables</div>
+          <ul class="track-list">
+            <li><strong>Pitch (5 minutos)</strong> — problema, solución técnica y modelo de negocio/transferencia</li>
+            <li><strong>Live Demo</strong> — demostración funcional de lo desarrollado</li>
+          </ul>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Simuladores recomendados</div>
+          <div class="track-resources">
+            <a href="https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots" target="_blank" class="track-resource-link">Webots — primera simulación (Challenge 2)</a>
+            <a href="https://wokwi.com/" target="_blank" class="track-resource-link">Wokwi — simulador online (Challenge 1)</a>
+          </div>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Mentor</div>
+          <p class="track-person"><strong>Bautista Chasco</strong> — Quantitative Engineer en DAMM Capital · Robotics Professor en UDESA</p>
+          <p class="track-person" style="margin-top:6px;color:rgba(247,245,240,0.4);">Mentoría online vía Telegram · Especialmente disponibles el sábado</p>
+        </div>
+        <div class="track-section">
+          <div class="track-section-title">Jurado</div>
+          <p class="track-person" style="color:rgba(247,245,240,0.4);">Coming soon</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="notice" style="margin-top:24px;">
+      <span class="notice-icon">💡</span>
+      <div class="notice-text">
+        <strong>Prize pool total: $10,000 USD</strong> — Podés participar en más de un track. ¡Más tracks = más chances de ganar!
       </div>
     </div>
   </div>
@@ -2389,22 +3001,53 @@
         <div style="display:flex;flex-wrap:wrap;gap:5px;">
           <a href="https://mardelplata.dev.ar" target="_blank" style="font-family:var(--font-m);font-size:9px;font-weight:700;color:rgba(247,245,240,0.45);text-decoration:none;padding:3px 8px;border:1px solid rgba(247,245,240,0.12);" onmouseover="this.style.color='#E8441C'" onmouseout="this.style.color='rgba(247,245,240,0.45)'">🌐 Web</a>
           <a href="https://chat.whatsapp.com/LZEZd0oV7mD50PuESX4ybs" target="_blank" style="font-family:var(--font-m);font-size:9px;font-weight:700;color:rgba(247,245,240,0.45);text-decoration:none;padding:3px 8px;border:1px solid rgba(247,245,240,0.12);" onmouseover="this.style.color='#E8441C'" onmouseout="this.style.color='rgba(247,245,240,0.45)'">WhatsApp</a>
+          <a href="https://www.instagram.com/mardelplata.dev.ar/" target="_blank" style="font-family:var(--font-m);font-size:9px;font-weight:700;color:rgba(247,245,240,0.45);text-decoration:none;padding:3px 8px;border:1px solid rgba(247,245,240,0.12);" onmouseover="this.style.color='#E8441C'" onmouseout="this.style.color='rgba(247,245,240,0.45)'">Instagram</a>
+          <a href="https://x.com/Mardeldev" target="_blank" style="font-family:var(--font-m);font-size:9px;font-weight:700;color:rgba(247,245,240,0.45);text-decoration:none;padding:3px 8px;border:1px solid rgba(247,245,240,0.12);" onmouseover="this.style.color='#E8441C'" onmouseout="this.style.color='rgba(247,245,240,0.45)'">X / Twitter</a>
+          <a href="https://vt.tiktok.com/ZS9RDKtM75Puj-KyPzz/" target="_blank" style="font-family:var(--font-m);font-size:9px;font-weight:700;color:rgba(247,245,240,0.45);text-decoration:none;padding:3px 8px;border:1px solid rgba(247,245,240,0.12);" onmouseover="this.style.color='#E8441C'" onmouseout="this.style.color='rgba(247,245,240,0.45)'">TikTok</a>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Sponsors -->
+  <div style="width:100%;margin-bottom:20px;">
+    <div style="font-family:var(--font-m);font-size:8px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(247,245,240,0.25);margin-bottom:10px;">Sponsors</div>
+    <div style="border:1px solid var(--border);padding:14px 16px;background:rgba(232,68,28,0.04);display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+      <a href="https://wallbit.io" target="_blank" style="display:flex;align-items:center;flex-shrink:0;">
+        <img
+          src="https://cdn.prod.website-files.com/67aca5c7e0a415189908624c/67b35f2d03f9c3d7958b5f74_616f0aed86b7bfe5acd6a19b040946c2_logoText.avif"
+          alt="Wallbit"
+          style="height:28px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:0.8;"
+        >
+      </a>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;">
+        <a href="https://wallbit.io" target="_blank" style="font-family:var(--font-m);font-size:9px;font-weight:700;color:rgba(247,245,240,0.45);text-decoration:none;padding:3px 8px;border:1px solid rgba(247,245,240,0.12);" onmouseover="this.style.color='#E8441C'" onmouseout="this.style.color='rgba(247,245,240,0.45)'">🌐 Web</a>
+      </div>
+    </div>
+  </div>
+
   <!-- Partners -->
-  <div style="width:100%;margin-bottom:24px;">
+  <div style="width:100%;margin-bottom:20px;">
     <div style="font-family:var(--font-m);font-size:8px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(247,245,240,0.25);margin-bottom:10px;">Partners</div>
-    <div style="border:1px solid var(--border);padding:16px 20px;background:rgba(232,68,28,0.04);display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+    <div style="border:1px solid var(--border);padding:14px 16px;background:rgba(232,68,28,0.04);display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
       <img
         src="WeCheck%20Logo%20%2B%20Font/Logo_Dark%20Theme/WeCheck%20Logotype%20Horizontal%20-%20DARK.png"
         alt="WeCheck AI"
-        style="height:36px;width:auto;object-fit:contain;opacity:0.85;"
+        style="height:28px;width:auto;object-fit:contain;opacity:0.8;"
       >
-          <div style="font-size:10px;color:rgba(247,245,240,0.4);line-height:1.5;flex:1;min-width:160px;">
+      <div style="font-size:10px;color:rgba(247,245,240,0.4);line-height:1.5;flex:1;min-width:160px;">
         Cada persona deja miles de rastros digitales en la web. WeCheck AI los recopila, los conecta y revela las señales de alerta que importan.
+      </div>
+    </div>
+  </div>
+
+  <!-- Colaboradores -->
+  <div style="width:100%;margin-bottom:24px;">
+    <div style="font-family:var(--font-m);font-size:8px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(247,245,240,0.25);margin-bottom:10px;">Colaboradores</div>
+    <div style="border:1px solid var(--border);padding:14px 16px;background:rgba(232,68,28,0.04);">
+      <div style="font-family:var(--font-c);font-size:15px;color:var(--white);letter-spacing:0.06em;margin-bottom:6px;">LABORATORIOS FARES TAIE</div>
+      <div style="font-size:10px;color:rgba(247,245,240,0.4);line-height:1.5;">
+        Laboratorio de investigación y desarrollo tecnológico. Colaborador del Aleph Hackathon Mar del Plata 2026.
       </div>
     </div>
   </div>
@@ -2426,6 +3069,13 @@
       mobileMenu.classList.remove('open');
     });
   });
+
+  function toggleTrack(header) {
+    const body = header.nextElementSibling;
+    const isOpen = header.classList.contains('open');
+    header.classList.toggle('open', !isOpen);
+    body.classList.toggle('open', !isOpen);
+  }
 </script>
 </body>
 </html>
